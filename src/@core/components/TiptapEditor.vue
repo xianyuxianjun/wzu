@@ -125,6 +125,24 @@ watch(() => props.modelValue, () => {
         :class="{ 'is-active': editor.isActive({ textAlign: 'justify' }) }"
         @click="editor.chain().focus().setTextAlign('justify').run()"
       />
+      <VBtn
+        icon="ri-file-line"
+        class="rounded"
+        size="small"
+        variant="text"
+        color="default"
+        :class="{ 'is-active': editor.isActive({ textAlign: 'justify' }) }"
+        @click="editor.chain().focus().setTextAlign('justify').run()"
+      />
+      <VBtn
+        icon="ri-file-image-line"
+        class="rounded"
+        size="small"
+        variant="text"
+        color="default"
+        :class="{ 'is-active': editor.isActive({ textAlign: 'justify' }) }"
+        @click="editor.chain().focus().setTextAlign('justify').run()"
+      />
     </div>
     <VDivider class="mt-4 mb-2" />
     <EditorContent
