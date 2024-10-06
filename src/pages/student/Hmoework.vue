@@ -24,18 +24,18 @@ const standardList = ref([
     id: 1,
     title: "标准1",
     content:'文字美观',
-    score:'99'
+    score:'25'
   },
   {
     id: 2,
     title: "标准1",
-    content:'文字美观',
-    score:'99'
+    content:'主题明确',
+    score:'25'
   },{
     id: 3,
     title: "标准1",
-    content:'文字美观',
-    score:'99'
+    content:'论证严谨',
+    score:'50'
   }
 ])
 
@@ -50,6 +50,10 @@ const basicEditorContent = ref('')
 
 <template>
   <VCard>
+    <template #append>
+      <VBtn class="me-2">保存</VBtn>
+      <VBtn color="success">提交</VBtn>
+    </template>
     <VCardText>
       <VRow>
         <VCol cols="12" md="2">
@@ -64,14 +68,13 @@ const basicEditorContent = ref('')
           <VCardTitle>
             评价标准
           </VCardTitle>
-          <VRow v-for="item in standardList" :key="item.id">
-              <VChip color="success">
-                {{ item.content}}
-              </VChip>
-              <VChip color="success">
-                满分:{{ item.score }}
-              </VChip>
-          </VRow>
+          <VList v-for="standard in standardList" :key="standard.id">
+            <VListItem>
+              {{ standard.content }}
+              <VChip color="primary">{{ standard.score}}</VChip>
+            </VListItem>
+          </VList>
+
         </VCol>
         <VCol cols="12" md="10">
           <VRow>
@@ -98,8 +101,6 @@ const basicEditorContent = ref('')
           </div>
         </VCol>
       </VRow>
-
-
     </VCardText>
   </VCard>
 </template>
