@@ -1,8 +1,8 @@
 <script setup>
 
-//学习材料
-import TiptapEditor from "@core/components/TiptapEditor.vue"
 
+import TiptapEditor from "@core/components/TiptapEditor.vue"
+//学习材料
 const materialsList = ref([
   {
     id : 1,
